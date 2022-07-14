@@ -90,3 +90,9 @@ FROM Student S join Mark M on S.StudentId = M.StudentId join Subject Sub on M.Su
 SELECT S.StudentId, S.StudentName, Sub.SubName, M.Mark
 FROM Student S join Mark M on S.StudentId = M.StudentId join Subject Sub on M.SubId = Sub.SubId
 WHERE Sub.SubName = 'CF';
+
+select * from student where StudentName like '%h%' ;
+select * from class where StartDate = (month(StartDate));
+select * from class where month(StartDate) = 12;
+select * from subject;
+select * from subject where Credit >= 3 and Credit <= 5;
