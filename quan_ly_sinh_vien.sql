@@ -122,3 +122,15 @@ SELECT S.StudentId, S.StudentName, AVG(Mark)
 FROM Student S join Mark M on S.StudentId = M.StudentId
 GROUP BY S.StudentId, S.StudentName
 HAVING AVG(Mark) >= ALL (SELECT AVG(Mark) FROM Mark GROUP BY Mark.StudentId);
+
+select * from subject where Credit =  (select max(credit) from subject);
+
+select SubName from subject
+join mark on mark.SubId = subject.SubId
+where mark.Mark = (select max(Mark) from mark)
+;
+
+select b.StudentName, a.Mark from mark as a
+join student as b on b.StudentId = a.StudentId
+group by b.StudentName, a.Mark
+order by a.Mark desc;
