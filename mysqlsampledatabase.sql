@@ -7932,3 +7932,14 @@ insert  into `products`(`productCode`,`productName`,`productLine`,`productScale`
 select * from customers ;
 ALTER TABLE customers ADD INDEX idx_customerName(customerName);
 EXPLAIN SELECT * FROM customers WHERE customerName = 'Land of Toys Inc.'; 
+
+delimiter //
+
+create procedure findAllCustomer()
+begin
+select * from customers;
+end //
+
+delimiter ;
+
+call findAllCustomer();
